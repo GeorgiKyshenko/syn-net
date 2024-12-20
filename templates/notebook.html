@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/notebook.css') }}" /> 
+
+{% block dialog %}
+{% if open %}
+    <div class="backdrop"></div>
+    <dialog open>
+      <div class="close-button-container">
+        <div></div>
+        <div></div>
+        <a class="close-dialog" href="{{ url_for('close_dialog') }}">Close</a>
+      </div>
+      {{ notebook_content|safe }}
+    </dialog>
+    {% endif %}
+{% endblock dialog %}

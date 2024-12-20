@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+li {
+  font-size: 2.5rem;
+}
+
+body {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.main-head {
+  width: 95%;
+  margin: 0 0 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  min-height: 10vh;
+  width: 70%;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex: 1 1 10rem;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex: 1 1 40rem;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+.nav-bar-li,
+button,
+label,
+input,
+a,
+p {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
+.nav-bar-li a {
+  display: block;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.nav-bar-li a.active {
+  background-color: rgb(5, 5, 5);
+  color: white;
+}
+
+@media screen and (max-width: 1332px) {
+  html {
+    font-size: 53%;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 45%;
+  }
+  .main-head {
+    width: 100%;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 10rem;
+    margin-top: 2rem;
+  }
+  ul {
+    flex: 1 1 60rem;
+    margin: 2rem 0rem;
+  }
+}

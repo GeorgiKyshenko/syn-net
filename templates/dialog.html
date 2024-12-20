@@ -1,0 +1,19 @@
+{% block styles %}  <link rel="stylesheet" href="{{ url_for('static', filename='css/dialog.css') }}" />  {% endblock%}
+
+{% block dialog %}
+    <h1>Dynamic Dialog Example</h1>
+    <form action="/" method="get">
+      <button type="submit" name="dialog_open" value="true">Open Dialog</button>
+    </form>
+    <form action="/" method="get">
+      <button type="submit" name="dialog_open" value="false">Close Dialog</button>
+    </form>
+
+    {% if open %}
+    <dialog  open>
+      <h2>Dialog Content</h2>
+      {{ notebook_content|safe }}
+        <button type="submit" name="notebook_content" value="false">Close</button>
+    </dialog>
+    {% endif %}
+{% endblock dialog %}

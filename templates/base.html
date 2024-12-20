@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--VERY VERY VERY IMPORTANT FOR ROUTING ESPECIALLY NESTED ROUTING (it keeps the state of the url on borwser refreshes!!!)-->
+    <!-- <base href="/" /> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Professional Web Developer" />
+    <meta name="robots" content="index,follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+    {% block styles %} {% endblock %}
+
+    <title>Georgi E.T. | Web Developer</title>
+  </head>
+  <body>
+    <header class="main-head">
+      <nav class="main-nav">
+        <div class="logo">
+          <img src="../static/svgs/dl-logo.svg" alt="" />
+          <a href="{{ url_for('home') }}">
+            <h1>SynNet</h1>
+          </a>
+        </div>
+        <ul>
+          <li class="nav-bar-li">
+            <a class="{{ 'active' if request.path == '/home' }}" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-bar-li">
+            <a class="{{ 'active' if request.path == '/projects' or request.path == '/ai' or request.path == '/math'  }}" href="{{ url_for('projects') }}">Projects</a>
+          </li>
+          <li class="nav-bar-li">
+            <a class="{{ 'active' if request.path == '/contact' }}" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    {% block content%} {% endblock %}
+  </body>
+</html>

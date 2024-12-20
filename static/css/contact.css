@@ -1,0 +1,23 @@
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  height: 90vh;
+}
+
+h2 {
+  display: block;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 10rem;
+}
+
+@media screen and (max-width: 760px) and (max-height: 916px) {
+  .text-container {
+    height: 78vh;
+  }
+}
