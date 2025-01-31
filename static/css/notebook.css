@@ -1,19 +1,14 @@
 dialog {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
   justify-items: center;
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: 100%;
   border: none;
   border-radius: 8px;
   padding: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-62.5%, -50%);
   overflow: auto;
   z-index: 1;
 }
@@ -56,9 +51,9 @@ dialog {
   transition: 0.4s ease;
 }
 
-@media screen and (max-width: 415px) {
+/* @media screen and (max-width: 415px) {
   dialog {
     width: 100%;
     transform: translate(-50%, -50%);
   }
-}
+} */

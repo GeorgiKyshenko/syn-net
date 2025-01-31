@@ -1,13 +1,202 @@
-.container {
+.body {
+  display: flex;
+  flex: wrap;
+  min-height: 90vh;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ctext x='20' y='40' font-size='30' fill='gray' opacity='0.3'%3E∑%3C/text%3E%3Ctext x='100' y='80' font-size='30' fill='gray' opacity='0.3'%3Eπ%3C/text%3E%3Ctext x='50' y='150' font-size='30' fill='gray' opacity='0.3'%3E∞%3C/text%3E%3Ctext x='150' y='40' font-size='30' fill='gray' opacity='0.3'%3E∫%3C/text%3E%3Ctext x='70' y='100' font-size='30' fill='gray' opacity='0.3'%3E±%3C/text%3E%3Ctext x='120' y='160' font-size='30' fill='gray' opacity='0.3'%3E√%3C/text%3E%3Ctext x='30' y='90' font-size='30' fill='gray' opacity='0.3'%3E∂%3C/text%3E%3Ctext x='160' y='120' font-size='30' fill='gray' opacity='0.3'%3E∏%3C/text%3E%3C/svg%3E");
+  background-size: 200px 200px; /* Adjust density here */
+  background-color: #f9f9f9;
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+table {
+  background-color: #fffb;
+  border: 10px solid transparent;
+}
+
+.table__header {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  height: 5%;
+  border-radius: 0.6rem;
+  margin: 0 0;
+}
+
+.table__body {
+  padding: 1rem;
+  /* max-height: calc(89% - 1.6rem); */
+  /* background-color: #fffb; */
+  margin: auto auto;
+  border-radius: 0.6rem;
+  /* height: 87vh; */
+  background-color: #fff5;
+  /* filter: blur(0.2px); */
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+tr {
+  display: grid;
+  margin-bottom: 1.2rem;
+}
+
+.nb-title {
+  text-align: center;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+table,
+td {
+  width: 25vw;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr:hover {
+  background-color: #fff6;
+}
+
+.status {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
-  height: 90vh;
+  /* height: 100px; */
 }
 
-svg:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.754));
+.status a {
+  display: block;
+  height: 3.5rem;
+  width: 10rem;
+  padding: 5rem auto;
+  border: none;
+  border-color: black;
+  outline: none;
+  color: #010101;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.status a::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #b1b1b1;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+}
+
+.status a::before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #ffb000, #48ff00, #00ffd5, #002bff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+  animation: glow 20s linear infinite;
+}
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  0% {
+    background-position: 0 0;
+  }
+}
+
+.status a:hover:before {
+  opacity: 1;
+}
+
+.status a:hover::after {
+  background-color: transparent;
+}
+
+.table__body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media screen and (max-width: 462px) {
+  table {
+    width: 100%;
+  }
+  td,
+  tr {
+    width: 100%;
+  }
+  .table__body {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  table {
+    width: 100%;
+  }
+  td,
+  tr {
+    width: 100%;
+  }
+  .table__body {
+    width: 90vw;
+  }
 }

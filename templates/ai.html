@@ -1,22 +1,15 @@
-{% extends "base.html" %}
-
-{% block styles %} <link rel="stylesheet" href="{{ url_for('static', filename='css/ai.css') }}" /> {% endblock styles %}
-
-{% block content %}
-{% include "notebook.html" %}
+{% extends "base.html" %} {% block styles %} <link rel="stylesheet" href="{{ url_for('static', filename='css/ai.css') }}" />{% endblock styles %} {% block content %} {% include "notebook.html" %}
 <div class="body">
   <div class="button-container">
     <section class="table__body">
-      <h1 class="table__header">.ipynb files</h1>
+      <h1 class="table__header">AI.ipynb files</h1>
       <table>
         <tbody>
-          {% for notebook in notebooks  %}
+          {% for notebook in notebooks %}
           <tr>
             <td class="nb-title">{{ notebook.title }}</td>
             <td class="status">
-              <a href="{{ url_for('notebook', file=notebook.file, open=notebook.is_open) }}">
-                Explore
-              </a>
+              <a href="{{ url_for('notebook', file=notebook.file, open=notebook.is_open, path=current_url) }}"> Explore </a>
             </td>
           </tr>
           {% endfor %}
@@ -24,6 +17,5 @@
       </table>
     </section>
   </div>
-</div>
 </div>
 {% endblock content %}
